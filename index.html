@@ -8,23 +8,23 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<body>
+<body class="bg-info-subtle">
     
     <div id="app">
-        <div class="container">
-            <h1 class="text-center">{{title}}</h1>
-            <div>
-                <input v-model="newTask" @keyup.enter="addTask" type="text" placeholder="Write a new task">
-                <button @click='addTask' class="btn">
+        <div class="todo-container mt-2">
+            <h1 class="p-3 text-center text-info-emphasis">{{title}}</h1>
+            <div class="d-flex align-items-center justify-content-between">
+                <input v-model="newTask" @keyup.enter="addTask" type="text" placeholder="Write a new task" class="me-3 p-1">
+                <button @click='addTask' class="btn btn-primary">
                     Add new task <i class="fa-solid fa-plus"></i>
                 </button>
             </div>
             <div class="text-danger">{{error}}</div>
-            <div class="card">
+            <div class="mt-2 mb-2 p-3 card">
                 <ul>
-                    <li v-for="(task, index) in tasks" @click="task.done = !task.done" class="d-flex align-items-center">
+                    <li v-for="(task, index) in tasks" @click="task.done = !task.done" class="d-flex align-items-center text-center">
                         <p class="m-0" :class="{'text-decoration-line-through' : task.done}">{{task.text}}</p>
-                        <i @click.stop="deleteTask(index)" class="fa-solid fa-xmark fs-4"></i>
+                        <i @click.stop="deleteTask(index)" class="fa-solid fa-xmark fs-4 ms-3"></i>
                     </li>
                 </ul>
             </div>

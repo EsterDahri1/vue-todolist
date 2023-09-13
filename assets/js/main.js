@@ -66,7 +66,7 @@ createApp({
 
             //faccio immettere per forza un messaggio all'utente sennò messaggio di errore da mettere in pag con div
             if(this.newTask.length < 1){
-                this.error = 'You need to insert at least 1 letter';
+                this.error = '⚠️ You need to insert at least 1 letter ⚠️';
             }else{
                 //con unshift metto la nuova task all'inizio della lista
                 this.tasks.unshift(plusTask);

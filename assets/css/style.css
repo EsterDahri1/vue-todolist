@@ -6,6 +6,11 @@
 }
 
 /*Body*/
+.todo-container{
+    margin: auto;
+    width: 50%;
+}
+
 p, i{
     cursor: pointer;
 }
