@@ -23,6 +23,9 @@ createApp({
             //aggiungo una stringa che conterrà la nuova task 
             newTask: '',
 
+            //aggiungo stringa di errore
+            error: '',
+
             //aggiungo un array di oggetti 
             tasks: [
                 {
@@ -53,6 +56,25 @@ createApp({
             this.tasks.splice(index, 1);
         },
 
+        //aggiungo funzione per aggiungere task 
+        addTask(){
+            //testo in generale per la nuova task
+            let plusTask = {
+                text: this.newTask,
+                done: false
+            }
+
+            //faccio immettere per forza un messaggio all'utente sennò messaggio di errore da mettere in pag con div
+            if(this.newTask.length < 1){
+                this.error = 'You need to insert at least 1 letter';
+            }else{
+                //con unshift metto la nuova task all'inizio della lista
+                this.tasks.unshift(plusTask);
+                //reset l'input
+                this.newTask = '';
+                this.error = ''
+            }
+        }
 
     }
 }).mount('#app')
