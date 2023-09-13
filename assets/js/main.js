@@ -34,7 +34,7 @@ createApp({
             },
             {
                 text: 'Todo 3',
-                done: false,
+                done: true,
             },
             {
                 text: 'Todo 4',
