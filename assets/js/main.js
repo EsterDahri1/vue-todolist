@@ -16,38 +16,43 @@ let {createApp} = Vue
 
 createApp({
     data() {
-      return {
-        //aggiungo un titolo alla pagina
-        title: 'To do list',
+        return {
+            //aggiungo un titolo alla pagina
+            title: 'To do list',
 
-        //aggiungo una stringa che conterrà la nuova task 
-        newTask: '',
+            //aggiungo una stringa che conterrà la nuova task 
+            newTask: '',
 
-        //aggiungo un array di oggetti 
-        tasks:[
-            {
-                //proprietà text 
-                text: 'Todo 1',
-                //proprietà done booleana
-                done: false,
-            },
-            {
-                text: 'Todo 2',
-                done: true,
-            },
-            {
-                text: 'Todo 3',
-                done: true,
-            },
-            {
-                text: 'Todo 4',
-                done: false,
-            }
-        ]
-      }
+            //aggiungo un array di oggetti 
+            tasks: [
+                {
+                    //proprietà text 
+                    text: 'Todo 1',
+                    //proprietà done booleana
+                    done: false,
+                },
+                {
+                    text: 'Todo 2',
+                    done: true,
+                },
+                {
+                    text: 'Todo 3',
+                    done: true,
+                },
+                {
+                    text: 'Todo 4',
+                    done: false,
+                }
+            ]
+        }
     },
 
-    methods(){
-        
+    methods: {
+        //aggiungo funzione per togliere una task già svolta
+        deleteTask(index){
+            this.tasks.splice(index, 1);
+        },
+
+
     }
-  }).mount('#app')
+}).mount('#app')

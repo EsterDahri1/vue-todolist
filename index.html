@@ -21,9 +21,9 @@
             </div>
             <div class="card">
                 <ul>
-                    <li v-for="task in tasks" class="d-flex align-items-center">
+                    <li v-for="(task, index) in tasks" class="d-flex align-items-center">
                         <p class="m-0" :class="{'text-decoration-line-through' : task.done}">{{task.text}}</p>
-                        <i @click.stop="deleteTask" class="fa-solid fa-xmark fs-4"></i>
+                        <i @click.stop="deleteTask(index)" class="fa-solid fa-xmark fs-4"></i>
                     </li>
                 </ul>
             </div>
