@@ -20,6 +20,9 @@ createApp({
         //aggiungo un titolo alla pagina
         title: 'To do list',
 
+        //aggiungo una stringa che conterrà la nuova task 
+        newTask: '',
+
         //aggiungo un array di oggetti 
         tasks:[
             {
@@ -42,5 +45,9 @@ createApp({
             }
         ]
       }
+    },
+
+    methods(){
+        
     }
   }).mount('#app')

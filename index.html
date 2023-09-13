@@ -11,12 +11,23 @@
 <body>
     
     <div id="app">
-        <h1>{{title}}</h1>
-        <ul>
-            <li v-for="task in tasks">
-                <p :class="{'text-decoration-line-through' : task.done}">{{task.text}}</p>
-            </li>
-        </ul>
+        <div class="container">
+            <h1 class="text-center">{{title}}</h1>
+            <div>
+                <input v-model="newTask" type="text" placeholder="Write a new task">
+                <button @click='addTask' class="btn">
+                    Add new task <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+            <div class="card">
+                <ul>
+                    <li v-for="task in tasks" class="d-flex align-items-center">
+                        <p class="m-0" :class="{'text-decoration-line-through' : task.done}">{{task.text}}</p>
+                        <i @click.stop="deleteTask" class="fa-solid fa-xmark fs-4"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 
 
