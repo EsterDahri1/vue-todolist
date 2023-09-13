@@ -12,12 +12,35 @@ Bonus:
 2- cliccando sul testo dell’item, invertire il valore della proprietà done del todo corrispondente (se done era uguale a false, impostare true e viceversa) 
 */
 
-
+let {createApp} = Vue
 
 createApp({
     data() {
       return {
-        
+        //aggiungo un titolo alla pagina
+        title: 'To do list',
+
+        //aggiungo un array di oggetti 
+        tasks:[
+            {
+                //proprietà text 
+                text: 'Todo 1',
+                //proprietà done booleana
+                done: false,
+            },
+            {
+                text: 'Todo 2',
+                done: true,
+            },
+            {
+                text: 'Todo 3',
+                done: false,
+            },
+            {
+                text: 'Todo 4',
+                done: false,
+            }
+        ]
       }
     }
   }).mount('#app')
