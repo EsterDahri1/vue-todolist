@@ -14,7 +14,7 @@
         <div class="container">
             <h1 class="text-center">{{title}}</h1>
             <div>
-                <input v-model="newTask" type="text" placeholder="Write a new task">
+                <input v-model="newTask" @keyup.enter="addTask" type="text" placeholder="Write a new task">
                 <button @click='addTask' class="btn">
                     Add new task <i class="fa-solid fa-plus"></i>
                 </button>
